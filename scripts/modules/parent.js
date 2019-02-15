@@ -1,6 +1,6 @@
 export default class Parent {
   constructor(){
-    
+
     this.child = [];
 
     let i = 0;
@@ -8,11 +8,12 @@ export default class Parent {
       this.child.push(new Child());
     };
 
-    console.log(this.child);
+    console.log(this.child.id);
   }
 };
 
 class Child {
-  constructor() {
+  constructor(id) {
+    this.id = id;
   }
 }
