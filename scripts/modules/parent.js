@@ -1,10 +1,10 @@
 export default class Parent {
-  constructor(){
+  constructor(amount){
 
     this.child = [];
 
     let i = 0;
-    for (i; i < 5; i++) {
+    for (i; i < amount; i++) {
       this.child.push(new Child());
     };
 
