@@ -1,5 +1,12 @@
 import Parent from './modules/parent.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  console.log(new Parent(8));
+  window.myClass = new Parent({
+    amount: 8,
+    activeIndex: 3
+  });
+  window.myClass2 = new Parent({
+    amount: 8,
+    activeIndex: 0
+  });
 });
