@@ -7,6 +7,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   window.myClass2 = new Parent({
     amount: 8,
-    activeIndex: 0
   });
 });

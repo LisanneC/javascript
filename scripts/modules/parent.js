@@ -1,12 +1,24 @@
 export default class Parent {
   constructor(settings){
     this.child = [];
-    this.activeIndex = settings.activeIndex;
+    this.settings = { ...Parent.defaultSettings, ...settings };
+
+    const {
+      amount,
+      activeIndex,
+    } = this.settings;
+
+    this.activeIndex = activeIndex;
 
     let i = 0;
-    for (i; i < settings.amount; i++) {
+    for (i; i < amount; i++) {
       this.child.push(new Child(i));
     };
+  }
+
+  static defaultSettings = {
+    amount: 0,
+    activeIndex: 0,
   }
 
   prev() {
@@ -18,15 +30,16 @@ export default class Parent {
   }
 
   getChild(index) {
-    // if statement if index is true use index else use this.activeIndex
+    // If statement if index is true use index else use this.activeIndex
     this.activeIndex = index ? index : this.activeIndex;
-    // Geeft nieuwe index waarde
+    // Gives new activeIndex
     return this.child[this.activeIndex];
   }
 
   getActiveChild() {
     return this.child[this.activeIndex];
   }
+
 };
 
 class Child {
