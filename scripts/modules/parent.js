@@ -1,12 +1,11 @@
 export default class Parent {
   constructor(settings){
     this.child = [];
-    this.settings = { ...Parent.defaultSettings, ...settings };
 
     const {
       amount,
       activeIndex,
-    } = this.settings;
+    } = { ...Parent.defaultSettings, ...settings };
 
     this.activeIndex = activeIndex;
 
